@@ -46,7 +46,7 @@ public class MySpringBootRouter extends RouteBuilder {
     			System.out.println();
     			System.out.println("Periodo de consulta: " + dateRange);
     			String encodedDateRange = URLEncoder.encode(dateRange, "UTF-8");
-    	    	exchange.getMessage().setHeader(Exchange.HTTP_QUERY);
+    	    	exchange.getMessage().setHeader(Exchange.HTTP_QUERY,"");
     	    	exchange.getMessage().setHeader(Exchange.HTTP_URI, wmsUri);
     		})
     		.to("log:DEBUG?showBody=true&showHeaders=true")
